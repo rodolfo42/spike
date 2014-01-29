@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>demo</title>
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/4.1.6/css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/4.1.6/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type='text/javascript'
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.js"></script>
+    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.0.1/jquery.qtip.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.0.1/jquery.qtip.css">
+    <script type='text/javascript'
+            src="//cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://goo.gl/Ecd9Q?.css">
+    <script type='text/javascript' src="http://www.examplet.buss.hk/js/jquery.caret.min.js"></script>
+    <script type='text/javascript' src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+    <script type='text/javascript' 
+            src='//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js'></script>
+    <script data-main="js/main" type="text/javascript" src="js/main.js"></script>
+<body>
+    <div class="container">
+        <div class="panel callout">
+            <h2>Serviço de cotação</h2>
+            <p>Escolha seu frete</p>
+        </div>
+        
+        <div class="row">
+            <div class="large-10 large-centered columns">
+                <form id="frmCotacao" class="panel radius" action="/cotacoes" method="POST">
+                    <h4>Dados da cotação</h4>
+                    <div class="row">
+                        <div class="large-3 small-6 columns">
+                            <div class="row">
+                                <div class="large-4 small-2 columns">
+                                    <label for="txtCep" class="right inline">CEP</label>
+                                </div>
+                                <div class="large-8 small-10 columns">
+                                    <div class="row collapse">
+                                        <div class="large-8 small-9 column">
+                                            <input type="text" id="txtCep" 
+                                            maxlength="5"
+                                            onfill="txtPeso" 
+                                            name="txtCep" />
+                                        </div>
+                                        <div class="large-4 small-3 left column">
+                                            <span class="postfix">000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-3 small-6 columns">
+                            <div class="row">
+                                <div class="large-3 small-2 columns">
+                                    <label for="txtCep" class="right inline">Peso</label>
+                                </div>
+                                <div class="large-7 small-10 columns">
+                                    <div class="row collapse">
+                                        <div class="large-8 small-9 column">
+                                            <input type="text" id="txtPeso" class="small-9" 
+                                                name="txtPeso" 
+                                                onfill="txtComprimento" maxlength="4" />
+                                        </div>
+                                        <div class="large-4 small-3 left column">
+                                            <span class="postfix">kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-4 small-12 columns">
+                            <div class="row">
+                                <div class="large-3 small-2 columns">
+                                    <label for="txtCep" class="right inline">CxLxA</label>
+                                </div>
+                                <div class="large-9 small-10 columns">
+                                    <div class="row">
+                                        <div class="small-4 column">
+                                            <input type="text" id="txtComprimento" 
+                                                name="txtComprimento" 
+                                                maxlength="2" 
+                                                onfill="txtLargura" 
+                                                placeholder="cm" />
+                                        </div>
+                                        <div class="small-4 column">
+                                            <input type="text" id="txtLargura" 
+                                                name="txtLargura" 
+                                                maxlength="2" 
+                                                onfill="txtAltura" 
+                                                placeholder="cm" />
+                                        </div>
+                                        <div class="small-4 column">
+                                            <input type="text" id="txtAltura" 
+                                                name="txtAltura" 
+                                                maxlength="2" 
+                                                onfill="btnCotar"
+                                                placeholder="cm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-2 small-12 columns">
+                            <button type="submit" id="btnCotar" class="small expand">Cotar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row" id="content">
+            <div class="large-10 large-centered columns">
+                <h4>Escolha uma forma de envio</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="150">forma de entrega</th>
+                            <th width="180">prazo estimado</th>
+                            <th width="100">peso cubado</th>
+                            <th width="100">preço final</th>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>BRASPRESS</th>
+                            <td class="nowrap">4 a 6 dias úteis</td>
+                            <td>6,00kg</td>
+                            <td class="bold">R$ 33,78</td>
+                            <td class="action"><a href="javascript:void(0)" class="button small success">usar &raquo;</a></td>
+                        </tr>
+                        <tr>
+                            <th>PAC</th>
+                            <td class="nowrap">4 a 9 dias úteis</td>
+                            <td>-</td>
+                            <td class="bold">R$ 35,55</td>
+                            <td class="action"><a href="javascript:void(0)" class="button small success">usar &raquo;</a></td>
+                        </tr>
+                        <tr>
+                            <th>TNT</th>
+                            <td class="nowrap">6 a 12 dias úteis</td>
+                            <td>6,00kg</td>
+                            <td class="bold">R$ 77,38</td>
+                            <td class="action"><a href="javascript:void(0)" class="button small success">usar &raquo;</a></td>
+                        </tr>
+                        <tr>
+                            <th>E-SEDEX</th>
+                            <td class="nowrap">de 2 a 4 dias úteis</td>
+                            <td>-</td>
+                            <td class="bold">R$ 84,55</td>
+                            <td class="action"><a href="javascript:void(0)" class="button small success">usar &raquo;</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

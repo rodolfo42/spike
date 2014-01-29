@@ -1,0 +1,76 @@
+body {
+    font-family:'Open Sans', sans-serif;
+}
+.container {
+    min-width: 480px;
+}
+#content {
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+    border-radius: 3px;
+}
+table thead {
+    border-bottom: 1px solid #DDD;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+table thead th, table thead td {
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+table thead th,
+table thead td
+table tbody th.nowrap,
+table tbody td.nowrap {
+    white-space: nowrap;
+}
+
+table tbody {
+    font-size: 90%;
+}
+table th {
+    font-weight: normal;
+    text-align: left;
+}
+button, .button {
+    border-radius: 3px;
+}
+.bold {
+    font-weight: 400;
+}
+td.action {
+    width: 120px;
+    text-align: center;
+}
+td.action a {
+    zoom: 0.7;
+    margin-bottom: 0 !important;
+}
+tr:hover td.action a, td.action:hover a, td.action a:hover {
+    zoom: 1;
+}
+tbody tr td {
+    height: 40px;
+    opacity: .7;
+}
+tbody tr:hover td {
+    opacity: 1;
+}
+
+button, .button {
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-family: 'Titillium Web';
+}
+
+#frmCotacao {
+    font-size: 90%;
+}
+.qtip-red {
+    color: white;
+    font-weight: bold;
+    background-color: #D95252;
+}
